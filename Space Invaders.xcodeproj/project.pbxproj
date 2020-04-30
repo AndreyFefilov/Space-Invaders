@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5409863C2446CEB3000B8E87 /* MemoryWorkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5409863B2446CEB3000B8E87 /* MemoryWorkingManager.swift */; };
 		544495C82444AD7D00BE9303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544495C72444AD7D00BE9303 /* AppDelegate.swift */; };
 		544495CA2444AD7D00BE9303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544495C92444AD7D00BE9303 /* ViewController.swift */; };
 		544495CD2444AD7D00BE9303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 544495CB2444AD7D00BE9303 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5409863B2446CEB3000B8E87 /* MemoryWorkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryWorkingManager.swift; sourceTree = "<group>"; };
 		544495C42444AD7D00BE9303 /* Space Invaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Invaders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		544495C72444AD7D00BE9303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		544495C92444AD7D00BE9303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5433AC682446031200585658 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5409863B2446CEB3000B8E87 /* MemoryWorkingManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5433AC692446032300585658 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				544495D02444AD8200BE9303 /* LaunchScreen.storyboard */,
+				544495CB2444AD7D00BE9303 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5433AC6A2446033200585658 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				544495C92444AD7D00BE9303 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		544495BB2444AD7D00BE9303 = {
 			isa = PBXGroup;
 			children = (
@@ -55,10 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				544495C72444AD7D00BE9303 /* AppDelegate.swift */,
-				544495C92444AD7D00BE9303 /* ViewController.swift */,
-				544495CB2444AD7D00BE9303 /* Main.storyboard */,
+				5433AC682446031200585658 /* Model */,
+				5433AC692446032300585658 /* View */,
+				5433AC6A2446033200585658 /* Controller */,
 				544495CE2444AD8200BE9303 /* Assets.xcassets */,
-				544495D02444AD8200BE9303 /* LaunchScreen.storyboard */,
 				544495D32444AD8200BE9303 /* Info.plist */,
 			);
 			path = "Space Invaders";
@@ -90,6 +117,9 @@
 		544495BC2444AD7D00BE9303 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					righBtn,
+				);
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Somebody once told me";
@@ -136,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				544495CA2444AD7D00BE9303 /* ViewController.swift in Sources */,
+				5409863C2446CEB3000B8E87 /* MemoryWorkingManager.swift in Sources */,
 				544495C82444AD7D00BE9303 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appsite.Space-Invaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appsite.Space-Invaders";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

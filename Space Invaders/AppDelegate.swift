@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  Space Invaders
-//
-//  Created by Andrey Fefilov on 13/04/2020.
-//  Copyright © 2020 Somebody once told me. All rights reserved.
-//
+
 
 import UIKit
 
