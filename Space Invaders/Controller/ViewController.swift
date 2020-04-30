@@ -11,11 +11,11 @@ class ViewController: UIViewController {
     
     var invadersImages = [[UIImageView]]()
     var invaderBullets = [UIImageView]()
-    var invadersNumber : Int = 0
-    var invadersFireRate : Int = 70
+    var invadersNumber : Int = 18
+    var invadersFireRate : Int = 60
     var invadersXPosition : CGFloat = 1.0
     var invadersYPosition : CGFloat = 0
-    var invadersFireCoolDown : Int = 100
+    var invadersFireCoolDown : Int = 90
 
     var shipPosition : CGFloat = 0
     var shipFireRate : Int = 20
@@ -58,14 +58,13 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         startTimer()
-        memoryWorkingManager.level = 1
     }
     
     
     func startGame() {
-        gameOverLogoButton.isHidden = false
-        bestScoreValueText.isHidden = false
-        bestScoreLabelText.isHidden = false
+        gameOverLogoButton.isHidden = true
+        bestScoreValueText.isHidden = true
+        bestScoreLabelText.isHidden = true
         
         memoryWorkingManager.loadData()
         
@@ -98,6 +97,8 @@ class ViewController: UIViewController {
     }
     
     func restartGame() {
+        print(invadersImages.count,invadersImages[0].count)
+        
         for i in 0...invadersImages.count - 1 {
             for j in 0...invadersImages[0].count - 1 {
                 invadersImages[i][j].removeFromSuperview()
@@ -113,6 +114,8 @@ class ViewController: UIViewController {
                                      y: view.frame.height - 80,
                                      width: 60,
                                      height: 60)
+        setupInvaders()
+        setupShip()
     }
     
     
@@ -131,6 +134,7 @@ class ViewController: UIViewController {
             }
             invadersImages.append(invadersRow)
         }
+        invadersNumber = 18
     }
     
     func invaderShoots() {
@@ -169,14 +173,14 @@ class ViewController: UIViewController {
                 invaderBullets.remove(at: i)
             }
         }
-        checkShipDestroy()
+        // checkShipDestroy()
     }
     
     func setupShip() {
         spaceShipView.frame = CGRect(x: view.frame.width / 2 - spaceShipView.frame.width / 2,
-                                     y: view.frame.height - 70,
-                                     width: 30,
-                                     height: 30)
+                                     y: view.frame.height - 200,
+                                     width: 60,
+                                     height: 60)
     }
     
     func shipShoots() {
@@ -304,19 +308,28 @@ class ViewController: UIViewController {
     }
     
     func levelUp() {
+        stopTimer()
+        
         // clear screen
         for i in 0...invadersImages.count - 1 {
             for j in 0...invadersImages[0].count - 1 {
                 invadersImages[i][j].removeFromSuperview()
             }
         }
+        
+        for i in invaderBullets {
+                i.removeFromSuperview()
+        }
+        
         invadersImages.removeAll()
+        invaderBullets.removeAll()
         
         memoryWorkingManager.level += 1
-        stopTimer()
         memoryWorkingManager.saveData()
         startGame()
         startTimer()
+        
+        
     }
     
     @IBAction func gameOverLogoTouch(_ sender: Any) {
