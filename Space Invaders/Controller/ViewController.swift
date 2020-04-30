@@ -53,10 +53,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startGame()
+        memoryWorkingManager.loadData()
+        memoryWorkingManager.currentScore = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        startGame()
         startTimer()
     }
     
@@ -173,7 +175,7 @@ class ViewController: UIViewController {
                 invaderBullets.remove(at: i)
             }
         }
-        // checkShipDestroy()
+        checkShipDestroy()
     }
     
     func setupShip() {
